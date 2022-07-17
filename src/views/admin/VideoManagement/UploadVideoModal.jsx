@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, message, Steps } from "antd";
 
-function UploadVideoModal({ visible }) {
+function UploadVideoModal({ visible, onCancel }) {
   const { Step } = Steps;
   const [current, setCurrent] = useState(0);
   const next = () => {
@@ -30,7 +30,7 @@ function UploadVideoModal({ visible }) {
     }
   ];
   return (
-    <Modal visible={visible} title="Title" footer={null}>
+    <Modal visible={visible} title="Title" footer={null} onCancel={onCancel}>
       <Steps current={current}>
         {steps.map(item => (
           <Step key={item.title} title={item.title} />

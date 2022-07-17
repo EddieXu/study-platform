@@ -1,11 +1,11 @@
 import React, { memo } from "react";
 import { AudioOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import "./SearchInput.css";
 
 function SearchInput(
   {
     width = "50%",
+    margin = "",
     placeHolder = "请输入关键字",
     allowClear = true,
     loading = false,
@@ -16,7 +16,7 @@ function SearchInput(
   ref
 ) {
   return (
-    <div className="searchInput">
+    <div style={{ margin: margin }}>
       <Input.Search
         {...rest}
         ref={ref}
