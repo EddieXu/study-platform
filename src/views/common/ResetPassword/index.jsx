@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Input, Form, Button } from 'antd';
-import { useHistory } from 'react-router-dom';
-import './ResetPassword.scss';
+import React, { useEffect, useState } from "react";
+import { Input, Form, Button } from "antd";
+import { useHistory } from "react-router-dom";
+import "./ResetPassword.scss";
 function ResetPassword() {
   const history = useHistory();
   const [form] = Form.useForm();
   const [number, setNumber] = useState(60);
-  const [codeName, setCodeName] = useState('发送验证码');
+  const [codeName, setCodeName] = useState("发送验证码");
 
   const sendCodeClick = () => {
     let second = 60;
@@ -18,7 +18,7 @@ function ResetPassword() {
       if (second === 0) {
         second = 60;
         setNumber(second);
-        setCodeName('发送验证码');
+        setCodeName("发送验证码");
         return;
       }
       setTimeout(countDown, 1000);
@@ -26,7 +26,7 @@ function ResetPassword() {
     setTimeout(countDown, 1000);
   };
   const loginClick = () => {
-    history.push('/login');
+    history.push("/login");
   };
   const formItemLayout = {
     labelCol: {
@@ -50,7 +50,7 @@ function ResetPassword() {
             form={form}
             onFinish={values => {
               console.log(values);
-              history.push('/login');
+              history.push("/login");
             }}
             scrollToFirstError
           >
@@ -60,7 +60,7 @@ function ResetPassword() {
               rules={[
                 {
                   required: true,
-                  message: '请输入你的账号!'
+                  message: "请输入你的账号!"
                 }
               ]}
             >
@@ -72,7 +72,7 @@ function ResetPassword() {
               rules={[
                 {
                   required: true,
-                  message: '请输入你的新密码!'
+                  message: "请输入你的新密码!"
                 }
               ]}
             >
@@ -84,18 +84,18 @@ function ResetPassword() {
               rules={[
                 {
                   required: true,
-                  message: '请输入你的新密码!'
+                  message: "请输入你的新密码!"
                 },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
-                    if (!value || getFieldValue('password') === value) {
+                    if (!value || getFieldValue("password") === value) {
                       return Promise.resolve();
                     }
-                    return Promise.reject(new Error('您输入的两个密码不匹配!'));
+                    return Promise.reject(new Error("您输入的两个密码不匹配!"));
                   }
                 })
               ]}
-              dependencies={['password']}
+              dependencies={["password"]}
             >
               <Input.Password />
             </Form.Item>
@@ -105,7 +105,7 @@ function ResetPassword() {
               rules={[
                 {
                   required: true,
-                  message: '请输入你的手机号码!'
+                  message: "请输入你的手机号码!"
                 }
               ]}
             >
@@ -117,26 +117,34 @@ function ResetPassword() {
               rules={[
                 {
                   required: true,
-                  message: '请输入你的验证码!'
+                  message: "请输入你的验证码!"
                 }
               ]}
             >
-              <div style={{ display: 'flex' }}>
-                <Input type="code" placeholder="验证码" style={{ marginRight: '15px' }} />
-                <Button type="primary" onClick={sendCodeClick} style={{ width: '28%' }}>
+              <div style={{ display: "flex" }}>
+                <Input
+                  type="code"
+                  placeholder="验证码"
+                  style={{ marginRight: "15px" }}
+                />
+                <Button
+                  type="primary"
+                  onClick={sendCodeClick}
+                  style={{ width: "28%" }}
+                >
                   {number !== 60 ? number : codeName}
                 </Button>
               </div>
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit" style={{ width: '50%' }}>
+              <Button type="primary" htmlType="submit" style={{ width: "50%" }}>
                 重置密码
               </Button>
             </Form.Item>
             <Form.Item>
-              <div style={{ marginBottom: '24px' }}>
-                <span style={{ color: '#AAA' }}>已有账号？</span>
-                <a onClick={loginClick} style={{ color: '#02A7F0' }}>
+              <div style={{ marginBottom: "24px" }}>
+                <span style={{ color: "#AAA" }}>已有账号？</span>
+                <a onClick={loginClick} style={{ color: "#02A7F0" }}>
                   登录
                 </a>
               </div>

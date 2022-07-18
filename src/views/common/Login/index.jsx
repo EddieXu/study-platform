@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Input, Form, Button, Select } from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { useHistory } from 'react-router-dom';
-import '../ResetPassword/ResetPassword.scss';
+import React, { useEffect, useState } from "react";
+import { Input, Form, Button, Select } from "antd";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { useHistory } from "react-router-dom";
+import "../ResetPassword/ResetPassword.scss";
 const { Option } = Select;
 function Login() {
   const history = useHistory();
@@ -12,10 +12,10 @@ function Login() {
     setValue(value);
   };
   const registerClick = () => {
-    history.push('/register');
+    history.push("/register");
   };
   const resetClick = () => {
-    history.push('/reset-password');
+    history.push("/reset-password");
   };
   return (
     <>
@@ -26,7 +26,7 @@ function Login() {
           className="form-style"
           onFinish={values => {
             console.log(values);
-            history.push('/');
+            history.push("/");
           }}
         >
           <Form.Item
@@ -35,7 +35,7 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: '请选择你的角色!'
+                message: "请选择你的角色!"
               }
             ]}
           >
@@ -56,7 +56,7 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: '请输入你的账号!'
+                message: "请输入你的账号!"
               }
             ]}
           >
@@ -70,7 +70,7 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: '请输入你的密码!'
+                message: "请输入你的密码!"
               }
             ]}
           >
@@ -84,23 +84,23 @@ function Login() {
             <Button
               type="primary"
               htmlType="submit"
-              style={{ width: '50%' }}
+              style={{ width: "50%" }}
               className="login-form-button"
             >
               登录
             </Button>
           </Form.Item>
           <Form.Item>
-            <div style={{ marginBottom: '24px' }}>
+            <div style={{ marginBottom: "24px" }}>
               <a
                 className="login-form-forgot"
-                style={{ color: '#AAA', 'margin-right': '24px' }}
+                style={{ color: "#AAA", "margin-right": "24px" }}
                 onClick={resetClick}
               >
                 忘记密码
               </a>
-              <span style={{ color: '#AAA' }}>还没有账号？</span>
-              <a onClick={registerClick} style={{ color: '#02A7F0' }}>
+              <span style={{ color: "#AAA" }}>还没有账号？</span>
+              <a onClick={registerClick} style={{ color: "#02A7F0" }}>
                 注册
               </a>
             </div>

@@ -9,16 +9,16 @@ export const options = [
         children: [
           {
             value: "xihu",
-            label: "West Lake",
+            label: "West Lake"
           },
           {
             value: "xiasha",
             label: "Xia Sha",
-            disabled: true,
-          },
-        ],
-      },
-    ],
+            disabled: true
+          }
+        ]
+      }
+    ]
   },
   {
     value: "jiangsu",
@@ -30,10 +30,10 @@ export const options = [
         children: [
           {
             value: "zhonghuamen",
-            label: "Zhong Hua men",
-          },
-        ],
-      },
-    ],
-  },
+            label: "Zhong Hua men"
+          }
+        ]
+      }
+    ]
+  }
 ];
