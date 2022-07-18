@@ -2,7 +2,23 @@ import React, { lazy } from "react";
 
 export default [
   {
-    path: "/sign-in",
-    component: lazy(() => import("views/common/SignIn"))
-  }
+    path: "/login",
+    component: lazy(() => import("views/common/Login")),
+  },
+  {
+    path: "/reset-passwords",
+    component: lazy(() => import("views/common/ResetPassword")),
+  },
+  {
+    path: "/register",
+    component: lazy(() => import("views/common/RegisterPage")),
+  },
+  {
+    path: "/enterprise",
+    component: lazy(() => import("views/common/EnterpriseInfoPage")),
+  },
+  {
+    path: "/student",
+    component: lazy(() => import("views/common/StudentInfoPage")),
+  },
 ];

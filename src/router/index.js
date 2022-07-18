@@ -33,7 +33,7 @@ function composeComponent(
 }
 
 function renderRoutes(routes, parentPath = "") {
-  return routes.map(unitRouteConfig => {
+  return routes.map((unitRouteConfig) => {
     const {
       path,
       intercept,
@@ -41,7 +41,7 @@ function renderRoutes(routes, parentPath = "") {
       component,
       children,
       exact,
-      props
+      props,
     } = unitRouteConfig;
     const fullPath = (parentPath + path).replace("//", "/");
 
@@ -50,7 +50,7 @@ function renderRoutes(routes, parentPath = "") {
         key={fullPath}
         path={fullPath}
         exact={!!exact}
-        render={RouteProps => {
+        render={(RouteProps) => {
           return composeComponent(
             intercept,
             layout,
