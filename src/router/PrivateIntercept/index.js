@@ -5,7 +5,7 @@ import { Redirect, useLocation } from "react-router-dom";
 const PrivateRoute = ({ children }) => {
   const location = useLocation();
   const { isAuthenticated, authRequestStatus } = useSelector(
-    state => state.user
+    (state) => state.user
   );
 
   return isAuthenticated || authRequestStatus === "PENDING" ? (
@@ -13,9 +13,9 @@ const PrivateRoute = ({ children }) => {
   ) : (
     <Redirect
       to={{
-        pathname: "/sign-in",
+        pathname: "/login",
         state: { from: location },
-        search: `?returnUrl=${location.pathname}${location.search}`
+        search: `?returnUrl=${location.pathname}${location.search}`,
       }}
     />
   );

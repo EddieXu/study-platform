@@ -1,4 +1,34 @@
 #root {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: overlay !important;
+}
+body,h1,h2,h3,h4,p{
+  margin: 0;
+}
+::-webkit-scrollbar {
+  height: 3px; /* height property applies only to horizontal scrollbars */
+  width: 10px; /* width property applies only to vertical scrollbars */
+}
+
+/* vertical scrollbars */
+::-webkit-scrollbar-track:vertical {
+  /* background-color: #eeeeee; */
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #bababa;
+  border-radius: 5px;
+  background-clip: content-box;
+  border: 3px solid transparent;
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: #7d7d7d;
+}
+
+/* horizontal scrollbars */
+::-webkit-scrollbar-track:horizontal {
+  background-color: #f2f2f2;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #2e2e2e;
 }

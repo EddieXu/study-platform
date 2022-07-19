@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Input, Form, Button, Select, Radio, Col, Row, Cascader } from "antd";
 import { useHistory } from "react-router-dom";
 import { options } from "constants/SearchData";
-import "../ResetPassword/ResetPassword.scss";
+import { Container } from "../index.styles";
 const { Option } = Select;
 function EnterpriseInfoPage() {
   const history = useHistory();
@@ -13,20 +13,20 @@ function EnterpriseInfoPage() {
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 7 }
+      sm: { span: 7 },
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 17 }
-    }
+      sm: { span: 17 },
+    },
   };
-  const onChange = e => {
+  const onChange = (e) => {
     setValue(e.target.value);
   };
-  const onChangeEducation = value => {
+  const onChangeEducation = (value) => {
     setValueEducation(value);
   };
-  const onChangeWork = value => {
+  const onChangeWork = (value) => {
     setValueWork(value);
   };
   const onChangeWillAddress = (value, selectedOptions) => {
@@ -35,13 +35,13 @@ function EnterpriseInfoPage() {
 
   const filter = (inputValue, path) => {
     path.some(
-      option =>
+      (option) =>
         option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
     );
   };
   return (
     <>
-      <div className="container">
+      <Container>
         <h1 style={{ textAlign: "center", fontSize: "20px", color: "#02A7F0" }}>
           欢迎使用企小微认证运营平台！
         </h1>
@@ -50,9 +50,8 @@ function EnterpriseInfoPage() {
         </p>
         <Form
           name="normal_login"
-          className="login-form"
           {...formItemLayout}
-          onFinish={values => {
+          onFinish={(values) => {
             console.log(values);
             history.push("/");
           }}
@@ -65,8 +64,8 @@ function EnterpriseInfoPage() {
                 rules={[
                   {
                     required: true,
-                    message: "请输入你的姓名!"
-                  }
+                    message: "请输入你的姓名!",
+                  },
                 ]}
               >
                 <Input placeholder="姓名" />
@@ -138,9 +137,9 @@ function EnterpriseInfoPage() {
                   placeholder="目前所在地"
                   expandTrigger="hover"
                   showSearch={{
-                    filter
+                    filter,
                   }}
-                  onSearch={value => console.log(value)}
+                  onSearch={(value) => console.log(value)}
                 />
               </Form.Item>
             </Col>
@@ -152,9 +151,9 @@ function EnterpriseInfoPage() {
                   placeholder="期望所在地"
                   expandTrigger="hover"
                   showSearch={{
-                    filter
+                    filter,
                   }}
-                  onSearch={value => console.log(value)}
+                  onSearch={(value) => console.log(value)}
                 />
               </Form.Item>
             </Col>
@@ -202,7 +201,7 @@ function EnterpriseInfoPage() {
         <div style={{ "margin-top": "-50px", textAlign: "center" }}>
           <p>感谢您填写以上学员信息，开始学习前来进行一场入营检测吧！</p>
         </div>
-      </div>
+      </Container>
     </>
   );
 }

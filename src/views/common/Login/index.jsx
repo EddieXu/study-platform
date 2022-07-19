@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Input, Form, Button, Select } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import "../ResetPassword/ResetPassword.scss";
+import { Container, Title, FormStyle } from "../index.styles";
 const { Option } = Select;
 function Login() {
   const history = useHistory();
   const [value, setValue] = useState(1);
 
-  const onChange = value => {
+  const onChange = (value) => {
     setValue(value);
   };
   const registerClick = () => {
@@ -19,12 +19,11 @@ function Login() {
   };
   return (
     <>
-      <div className="container">
-        <h1 className="title">认证运营平台</h1>
-        <Form
+      <Container>
+        <Title>认证运营平台</Title>
+        <FormStyle
           name="normal_login"
-          className="form-style"
-          onFinish={values => {
+          onFinish={(values) => {
             console.log(values);
             history.push("/");
           }}
@@ -35,8 +34,8 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: "请选择你的角色!"
-              }
+                message: "请选择你的角色!",
+              },
             ]}
           >
             <Select
@@ -56,8 +55,8 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: "请输入你的账号!"
-              }
+                message: "请输入你的账号!",
+              },
             ]}
           >
             <Input
@@ -70,8 +69,8 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: "请输入你的密码!"
-              }
+                message: "请输入你的密码!",
+              },
             ]}
           >
             <Input
@@ -105,8 +104,8 @@ function Login() {
               </a>
             </div>
           </Form.Item>
-        </Form>
-      </div>
+        </FormStyle>
+      </Container>
     </>
   );
 }

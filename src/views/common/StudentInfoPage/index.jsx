@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Input, Form, Button, Radio, Col, Row, Cascader } from "antd";
-import { useHistory } from "react-router-dom";
-import "../ResetPassword/ResetPassword.scss";
+import { Input, Form, Button, Radio, Col, Row, Cascader, Modal } from "antd";
+import { Container } from "../index.styles";
 import { options } from "constants/SearchData";
+import CampDetection from "../CampDetection";
+
 function StudentInfoPage() {
-  const history = useHistory();
   const [value, setValue] = useState(1);
+  const [isFirstLogin, setIsFirstLogin] = useState(false);
 
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 8 }
+      sm: { span: 8 },
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 16 }
-    }
+      sm: { span: 16 },
+    },
   };
-  const onChange = e => {
+  const onChange = (e) => {
     setValue(e.target.value);
   };
   const onChangeWillAddress = (value, selectedOptions) => {
@@ -26,14 +27,14 @@ function StudentInfoPage() {
 
   const filter = (inputValue, path) => {
     path.some(
-      option =>
+      (option) =>
         option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
     );
   };
 
   return (
     <>
-      <div className="container">
+      <Container>
         <h1 style={{ textAlign: "center", fontSize: "20px", color: "#02A7F0" }}>
           欢迎使用企小微认证运营平台！
         </h1>
@@ -42,11 +43,10 @@ function StudentInfoPage() {
         </p>
         <Form
           name="normal_login"
-          className="login-form"
           {...formItemLayout}
-          onFinish={values => {
+          onFinish={(values) => {
             console.log(values);
-            history.push("/");
+            setIsFirstLogin(true);
           }}
         >
           <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
@@ -57,8 +57,8 @@ function StudentInfoPage() {
                 rules={[
                   {
                     required: true,
-                    message: "请输入你的姓名!"
-                  }
+                    message: "请输入你的姓名!",
+                  },
                 ]}
               >
                 <Input placeholder="姓名" />
@@ -104,9 +104,9 @@ function StudentInfoPage() {
                   placeholder="期望所在地"
                   expandTrigger="hover"
                   showSearch={{
-                    filter
+                    filter,
                   }}
-                  onSearch={value => console.log(value)}
+                  onSearch={(value) => console.log(value)}
                 />
               </Form.Item>
             </Col>
@@ -132,7 +132,19 @@ function StudentInfoPage() {
         <div style={{ "margin-top": "-50px", textAlign: "center" }}>
           <p>感谢您填写以上学员信息，开始学习前来进行一场入营检测吧！</p>
         </div>
-      </div>
+        <Modal
+          title="入营检测"
+          centered
+          visible={isFirstLogin}
+          onOk={() => setIsFirstLogin(false)}
+          closable={false}
+          width="90%"
+          maskClosable={false}
+          cancelButtonProps={{ style: { display: "none" } }}
+        >
+          <CampDetection />
+        </Modal>
+      </Container>
     </>
   );
 }
