@@ -11,14 +11,14 @@ function StudentInfoPage() {
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 8 },
+      sm: { span: 8 }
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 16 },
-    },
+      sm: { span: 16 }
+    }
   };
-  const onChange = (e) => {
+  const onChange = e => {
     setValue(e.target.value);
   };
   const onChangeWillAddress = (value, selectedOptions) => {
@@ -27,7 +27,7 @@ function StudentInfoPage() {
 
   const filter = (inputValue, path) => {
     path.some(
-      (option) =>
+      option =>
         option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
     );
   };
@@ -44,7 +44,7 @@ function StudentInfoPage() {
         <Form
           name="normal_login"
           {...formItemLayout}
-          onFinish={(values) => {
+          onFinish={values => {
             console.log(values);
             setIsFirstLogin(true);
           }}
@@ -57,8 +57,8 @@ function StudentInfoPage() {
                 rules={[
                   {
                     required: true,
-                    message: "请输入你的姓名!",
-                  },
+                    message: "请输入你的姓名!"
+                  }
                 ]}
               >
                 <Input placeholder="姓名" />
@@ -104,9 +104,9 @@ function StudentInfoPage() {
                   placeholder="期望所在地"
                   expandTrigger="hover"
                   showSearch={{
-                    filter,
+                    filter
                   }}
-                  onSearch={(value) => console.log(value)}
+                  onSearch={value => console.log(value)}
                 />
               </Form.Item>
             </Col>

@@ -13,20 +13,20 @@ function EnterpriseInfoPage() {
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 7 },
+      sm: { span: 7 }
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 17 },
-    },
+      sm: { span: 17 }
+    }
   };
-  const onChange = (e) => {
+  const onChange = e => {
     setValue(e.target.value);
   };
-  const onChangeEducation = (value) => {
+  const onChangeEducation = value => {
     setValueEducation(value);
   };
-  const onChangeWork = (value) => {
+  const onChangeWork = value => {
     setValueWork(value);
   };
   const onChangeWillAddress = (value, selectedOptions) => {
@@ -35,7 +35,7 @@ function EnterpriseInfoPage() {
 
   const filter = (inputValue, path) => {
     path.some(
-      (option) =>
+      option =>
         option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
     );
   };
@@ -51,7 +51,7 @@ function EnterpriseInfoPage() {
         <Form
           name="normal_login"
           {...formItemLayout}
-          onFinish={(values) => {
+          onFinish={values => {
             console.log(values);
             history.push("/");
           }}
@@ -64,8 +64,8 @@ function EnterpriseInfoPage() {
                 rules={[
                   {
                     required: true,
-                    message: "请输入你的姓名!",
-                  },
+                    message: "请输入你的姓名!"
+                  }
                 ]}
               >
                 <Input placeholder="姓名" />
@@ -137,9 +137,9 @@ function EnterpriseInfoPage() {
                   placeholder="目前所在地"
                   expandTrigger="hover"
                   showSearch={{
-                    filter,
+                    filter
                   }}
-                  onSearch={(value) => console.log(value)}
+                  onSearch={value => console.log(value)}
                 />
               </Form.Item>
             </Col>
@@ -151,9 +151,9 @@ function EnterpriseInfoPage() {
                   placeholder="期望所在地"
                   expandTrigger="hover"
                   showSearch={{
-                    filter,
+                    filter
                   }}
-                  onSearch={(value) => console.log(value)}
+                  onSearch={value => console.log(value)}
                 />
               </Form.Item>
             </Col>

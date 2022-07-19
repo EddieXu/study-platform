@@ -8,7 +8,7 @@ function Login() {
   const history = useHistory();
   const [value, setValue] = useState(1);
 
-  const onChange = (value) => {
+  const onChange = value => {
     setValue(value);
   };
   const registerClick = () => {
@@ -23,7 +23,7 @@ function Login() {
         <Title>认证运营平台</Title>
         <FormStyle
           name="normal_login"
-          onFinish={(values) => {
+          onFinish={values => {
             console.log(values);
             history.push("/");
           }}
@@ -34,8 +34,8 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: "请选择你的角色!",
-              },
+                message: "请选择你的角色!"
+              }
             ]}
           >
             <Select
@@ -55,8 +55,8 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: "请输入你的账号!",
-              },
+                message: "请输入你的账号!"
+              }
             ]}
           >
             <Input
@@ -69,8 +69,8 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: "请输入你的密码!",
-              },
+                message: "请输入你的密码!"
+              }
             ]}
           >
             <Input

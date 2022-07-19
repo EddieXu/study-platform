@@ -9,16 +9,16 @@ export const options = [
         children: [
           {
             value: "xihu",
-            label: "West Lake",
+            label: "West Lake"
           },
           {
             value: "xiasha",
             label: "Xia Sha",
-            disabled: true,
-          },
-        ],
-      },
-    ],
+            disabled: true
+          }
+        ]
+      }
+    ]
   },
   {
     value: "jiangsu",
@@ -30,12 +30,12 @@ export const options = [
         children: [
           {
             value: "zhonghuamen",
-            label: "Zhong Hua men",
-          },
-        ],
-      },
-    ],
-  },
+            label: "Zhong Hua men"
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 export const topics = [
@@ -45,7 +45,7 @@ export const topics = [
     option1: "A",
     option2: "B",
     option3: "C",
-    option4: "D",
+    option4: "D"
   },
   {
     type: 2,
@@ -53,7 +53,7 @@ export const topics = [
     option1: "A",
     option2: "B",
     option3: "C",
-    option4: "D",
+    option4: "D"
   },
   {
     type: 1,
@@ -61,7 +61,7 @@ export const topics = [
     option1: "A",
     option2: "B",
     option3: "C",
-    option4: "D",
+    option4: "D"
   },
   {
     type: 1,
@@ -69,7 +69,7 @@ export const topics = [
     option1: "A",
     option2: "B",
     option3: "C",
-    option4: "D",
+    option4: "D"
   },
   {
     type: 2,
@@ -77,6 +77,6 @@ export const topics = [
     option1: "A",
     option2: "B",
     option3: "C",
-    option4: "D",
-  },
+    option4: "D"
+  }
 ];

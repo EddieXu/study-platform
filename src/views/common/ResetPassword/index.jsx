@@ -31,12 +31,12 @@ function ResetPassword() {
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 4 },
+      sm: { span: 4 }
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 20 },
-    },
+      sm: { span: 20 }
+    }
   };
   return (
     <>
@@ -46,7 +46,7 @@ function ResetPassword() {
           name="register"
           {...formItemLayout}
           form={form}
-          onFinish={(values) => {
+          onFinish={values => {
             console.log(values);
             history.push("/login");
           }}
@@ -58,8 +58,8 @@ function ResetPassword() {
             rules={[
               {
                 required: true,
-                message: "请输入你的账号!",
-              },
+                message: "请输入你的账号!"
+              }
             ]}
           >
             <Input placeholder="账号" />
@@ -70,8 +70,8 @@ function ResetPassword() {
             rules={[
               {
                 required: true,
-                message: "请输入你的新密码!",
-              },
+                message: "请输入你的新密码!"
+              }
             ]}
           >
             <Input.Password />
@@ -82,7 +82,7 @@ function ResetPassword() {
             rules={[
               {
                 required: true,
-                message: "请输入你的新密码!",
+                message: "请输入你的新密码!"
               },
               ({ getFieldValue }) => ({
                 validator(_, value) {
@@ -90,8 +90,8 @@ function ResetPassword() {
                     return Promise.resolve();
                   }
                   return Promise.reject(new Error("您输入的两个密码不匹配!"));
-                },
-              }),
+                }
+              })
             ]}
             dependencies={["password"]}
           >
@@ -103,8 +103,8 @@ function ResetPassword() {
             rules={[
               {
                 required: true,
-                message: "请输入你的手机号码!",
-              },
+                message: "请输入你的手机号码!"
+              }
             ]}
           >
             <Input placeholder="手机号码" />
@@ -115,8 +115,8 @@ function ResetPassword() {
             rules={[
               {
                 required: true,
-                message: "请输入你的验证码!",
-              },
+                message: "请输入你的验证码!"
+              }
             ]}
           >
             <div style={{ display: "flex" }}>

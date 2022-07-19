@@ -2,7 +2,12 @@
   height: 100%;
   overflow-y: overlay !important;
 }
-body,h1,h2,h3,h4,p{
+body,
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
 }
 ::-webkit-scrollbar {

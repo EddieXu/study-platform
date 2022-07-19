@@ -12,8 +12,8 @@ function CampDetection() {
   dataArr.forEach((item, index) => {
     item.index = index + 1;
   });
-  const dataRadio = dataArr.filter((item) => item.type === 1);
-  const dataCheckbox = dataArr.filter((item) => item.type === 2);
+  const dataRadio = dataArr.filter(item => item.type === 1);
+  const dataCheckbox = dataArr.filter(item => item.type === 2);
 
   useEffect(() => {
     countDown();
@@ -55,11 +55,11 @@ function CampDetection() {
           display: "inline-block",
           "overflow-y": "auto",
           "max-height": "350px",
-          width: "calc(100% - 300px)",
+          width: "calc(100% - 300px)"
         }}
       >
         <h2>单选题</h2>
-        {dataRadio.map((item) => {
+        {dataRadio.map(item => {
           return (
             <div>
               <h3>
@@ -75,7 +75,7 @@ function CampDetection() {
           );
         })}
         <h2>多选题</h2>
-        {dataCheckbox.map((item) => {
+        {dataCheckbox.map(item => {
           return (
             <div>
               <h3>
@@ -100,7 +100,7 @@ function CampDetection() {
           padding: "20px",
           textAlign: "center",
           backgroundColor: "#F2F2F2",
-          border: "3px solid #fafafa",
+          border: "3px solid #fafafa"
         }}
       >
         <p style={{ marginBottom: "10px" }}>考试剩余时间</p>
@@ -108,7 +108,7 @@ function CampDetection() {
           style={{
             border: "1px solid #000",
             marginBottom: "10px",
-            padding: "10px",
+            padding: "10px"
           }}
         >
           <h2>{timers}</h2>

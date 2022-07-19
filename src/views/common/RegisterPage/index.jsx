@@ -31,17 +31,17 @@ function RegisterPage() {
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 4 },
+      sm: { span: 4 }
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 20 },
-    },
+      sm: { span: 20 }
+    }
   };
-  const onChangeStudent = (value) => {
+  const onChangeStudent = value => {
     setValueStudent(value);
   };
-  const onChangeCultivate = (value) => {
+  const onChangeCultivate = value => {
     setValueCultivate(value);
   };
   const loginClick = () => {
@@ -55,7 +55,7 @@ function RegisterPage() {
           name="register"
           {...formItemLayout}
           form={form}
-          onFinish={(values) => {
+          onFinish={values => {
             console.log(values);
             if (values.type === 1 || values.type === 2) {
               history.push("/enterprise");
@@ -71,8 +71,8 @@ function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "请选择你的角色!",
-              },
+                message: "请选择你的角色!"
+              }
             ]}
           >
             <Select
@@ -93,8 +93,8 @@ function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "请输入你的账号!",
-              },
+                message: "请输入你的账号!"
+              }
             ]}
           >
             <Input placeholder="账号" />
@@ -105,8 +105,8 @@ function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "请输入你的新密码!",
-              },
+                message: "请输入你的新密码!"
+              }
             ]}
           >
             <Input.Password />
@@ -117,7 +117,7 @@ function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "请输入你的新密码!",
+                message: "请输入你的新密码!"
               },
               ({ getFieldValue }) => ({
                 validator(_, value) {
@@ -125,8 +125,8 @@ function RegisterPage() {
                     return Promise.resolve();
                   }
                   return Promise.reject(new Error("您输入的两个密码不匹配!"));
-                },
-              }),
+                }
+              })
             ]}
             dependencies={["password"]}
           >
@@ -138,8 +138,8 @@ function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "请输入你的手机号码!",
-              },
+                message: "请输入你的手机号码!"
+              }
             ]}
           >
             <Input placeholder="手机号码" />
@@ -150,8 +150,8 @@ function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "请输入你的验证码!",
-              },
+                message: "请输入你的验证码!"
+              }
             ]}
           >
             <div style={{ display: "flex" }}>
